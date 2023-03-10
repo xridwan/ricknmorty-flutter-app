@@ -1,6 +1,6 @@
 # ricknmorty
 
-A new Flutter project.
+A simple Flutter project app using http, Provider.
 
 ## Getting Started
 
