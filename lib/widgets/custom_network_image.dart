@@ -28,8 +28,8 @@ class CustomNetworkImage extends StatelessWidget {
             height: height,
             width: width,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: Colors.grey[800]!, width: 2)),
+                borderRadius: BorderRadius.circular(10)),
+                // border: Border.all(color: Colors.grey[800]!, width: 2)),
             child: const Icon(
               Icons.photo,
               color: Colors.white,

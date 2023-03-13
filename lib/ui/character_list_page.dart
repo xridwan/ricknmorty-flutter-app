@@ -16,6 +16,9 @@ class CharacterListPage extends StatelessWidget {
       create: (context) =>
           CharacterProvider(apiService: ApiService()).getCharacterList(),
       child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Rick N Morty'),
+        ),
         body: SafeArea(
           child: _buildList(),
         ),
@@ -27,7 +30,10 @@ class CharacterListPage extends StatelessWidget {
     return Consumer<CharacterProvider>(
       builder: (context, state, _) {
         if (state.state == ResultState.loading) {
-          return const Center(child: CircularProgressIndicator());
+          return const Center(
+              child: CircularProgressIndicator(
+            color: Colors.blue,
+          ));
         } else if (state.state == ResultState.hasData) {
           return GridView.builder(
             padding: const EdgeInsets.all(8),

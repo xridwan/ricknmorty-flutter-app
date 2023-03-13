@@ -28,7 +28,9 @@ class CharacterDetailPage extends StatelessWidget {
           builder: (context, state, child) {
             if (state.stateDetail == ResultState.loading) {
               return const Center(
-                child: CircularProgressIndicator(),
+                child: CircularProgressIndicator(
+                  color: Colors.blue,
+                ),
               );
             } else if (state.stateDetail == ResultState.hasData) {
               return _detail(context, state.character);
@@ -55,16 +57,16 @@ class CharacterDetailPage extends StatelessWidget {
                     foregroundDecoration: const BoxDecoration(
                       gradient: LinearGradient(
                         colors: [
-                          Colors.transparent,
-                          Color(0xff0e0f11),
+                          Color.fromRGBO(255, 255, 255, 250),
+                          Color(0xffffffff),
                         ],
-                        begin: Alignment(0, 0.3),
+                        begin: Alignment(0, 0.1),
                         end: Alignment.bottomCenter,
                       ),
                     ),
                     child: CustomNetworkImage(
-                      image: character.image ?? '',
-                      height: 400,
+                      image: character.image ?? 'Unknown',
+                      height: 350,
                       width: double.infinity,
                       fit: BoxFit.cover,
                     ),
@@ -101,9 +103,9 @@ class CharacterDetailPage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(top: 20),
                     child: Text(
-                      character.name ?? '',
+                      character.name ?? 'Unknown',
                       style: const TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 32,
                       ),
                     ),
@@ -111,9 +113,9 @@ class CharacterDetailPage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(top: 10),
                     child: Text(
-                      character.type ?? '',
+                      character.type ?? 'Unknown',
                       style: const TextStyle(
-                        color: Colors.white60,
+                        color: Colors.black87,
                         fontSize: 14,
                         letterSpacing: 0.8,
                       ),
@@ -125,7 +127,7 @@ class CharacterDetailPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          character.status ?? '',
+                          character.status ?? 'Unknown',
                           style: const TextStyle(
                             color: Colors.orangeAccent,
                           ),
@@ -142,7 +144,7 @@ class CharacterDetailPage extends StatelessWidget {
                               width: 10,
                             ),
                             Text(
-                              character.type ?? '',
+                              character.type ?? 'Unknown',
                               style: const TextStyle(
                                 color: Colors.orangeAccent,
                                 fontSize: 16,
